@@ -24,8 +24,8 @@ export const RangeSlider: React.FC<RangeSliderProps> = ({
   return (
     <div className="space-y-2">
       <div className="flex justify-between items-center">
-        <label className="text-xs font-medium text-slate-400 uppercase tracking-wider">{label}</label>
-        <span className="text-xs font-mono text-indigo-400">{value}{unit}</span>
+        <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">{label}</label>
+        <span className="text-xs font-mono font-bold text-pink-600 bg-pink-50 border border-pink-100 px-2 py-0.5 rounded">{value}{unit}</span>
       </div>
       <input
         type="range"
@@ -35,7 +35,7 @@ export const RangeSlider: React.FC<RangeSliderProps> = ({
         value={value}
         disabled={disabled}
         onChange={(e) => onChange(parseFloat(e.target.value))}
-        className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-pink-500 hover:accent-pink-600 disabled:opacity-50 disabled:cursor-not-allowed"
       />
     </div>
   );

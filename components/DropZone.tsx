@@ -49,12 +49,12 @@ export const DropZone: React.FC<DropZoneProps> = ({
 
   if (selectedFile) {
     return (
-      <div className="relative group p-4 bg-slate-800 border border-slate-700 rounded-xl flex items-center gap-4 shadow-sm hover:border-slate-600 transition-colors">
-        <div className="p-2 bg-indigo-500/20 text-indigo-400 rounded-lg">
+      <div className="relative group p-4 bg-white border border-slate-200 rounded-xl flex items-center gap-4 shadow-sm hover:border-orange-300 transition-all">
+        <div className="p-2 bg-orange-50 text-orange-500 rounded-lg">
           {icon}
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-medium text-slate-200 truncate">{selectedFile.name}</p>
+          <p className="text-sm font-semibold text-slate-800 truncate">{selectedFile.name}</p>
           <p className="text-xs text-slate-500">{(selectedFile.size / 1024 / 1024).toFixed(2)} MB</p>
         </div>
         <button 
@@ -62,7 +62,7 @@ export const DropZone: React.FC<DropZoneProps> = ({
             e.stopPropagation();
             onClear();
           }}
-          className="p-1 hover:bg-slate-700 rounded-full text-slate-400 hover:text-red-400 transition-colors"
+          className="p-1.5 hover:bg-red-50 rounded-full text-slate-300 hover:text-red-500 transition-colors"
         >
           <XIcon className="w-5 h-5" />
         </button>
@@ -80,8 +80,8 @@ export const DropZone: React.FC<DropZoneProps> = ({
         relative p-8 border-2 border-dashed rounded-xl cursor-pointer transition-all duration-200
         flex flex-col items-center justify-center text-center gap-3
         ${isDragging 
-          ? 'border-indigo-500 bg-indigo-500/10' 
-          : 'border-slate-700 bg-slate-800/50 hover:bg-slate-800 hover:border-slate-600'
+          ? 'border-orange-400 bg-orange-50' 
+          : 'border-slate-300 bg-slate-50 hover:bg-orange-50/50 hover:border-orange-300'
         }
       `}
     >
@@ -92,12 +92,12 @@ export const DropZone: React.FC<DropZoneProps> = ({
         accept={accept}
         onChange={handleInputChange}
       />
-      <div className={`p-3 rounded-full ${isDragging ? 'bg-indigo-500/20 text-indigo-400' : 'bg-slate-700/50 text-slate-400'}`}>
+      <div className={`p-3 rounded-full transition-colors ${isDragging ? 'bg-orange-100 text-orange-600' : 'bg-white text-orange-400 shadow-sm'}`}>
         <UploadIcon className="w-6 h-6" />
       </div>
       <div>
-        <p className="text-sm font-medium text-slate-200">{label}</p>
-        <p className="text-xs text-slate-500 mt-1">{subLabel}</p>
+        <p className="text-sm font-semibold text-slate-700">{label}</p>
+        <p className="text-xs text-slate-400 mt-1">{subLabel}</p>
       </div>
     </div>
   );
