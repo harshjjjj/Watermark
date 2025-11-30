@@ -1,0 +1,5 @@
+{
+  "name": "WatermarkPro - Client-side Video Processor",
+  "description": "A professional, secure, client-side video watermarking dashboard using the MediaRecorder and Canvas APIs.",
+  "requestFramePermissions": []
+}
